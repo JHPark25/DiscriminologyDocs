@@ -28,18 +28,12 @@ by T4SG. This app aims to create a mapping tool that publicly records and
 amplifies the lived experiences of Black and Brown communities by school and/or
 district.
 
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
-
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   backend
+   frontend
+   scripts
+   updates
