@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
+Discriminology Read the Docs
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+This repository contains in-depth documentation for the T4SG Discriminology project.
+It is based off the [following repository](https://github.com/readthedocs/tutorial-template).
