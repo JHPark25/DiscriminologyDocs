@@ -67,7 +67,7 @@ requests. A status code of 200 is returned for requests that are a success, and
 400 is returned for failed requests.
 
 *************
-GET Request
+GET Requests
 *************
 
 +++++++++++++
@@ -77,6 +77,62 @@ GET Request
 +++++++++++++
 /names
 +++++++++++++
+
++++++++++++++
+/schools
++++++++++++++
+
++++++++++++++
+/tli-tags
++++++++++++++
+
++++++++++++++
+/tli-tags-all
++++++++++++++
+
+*************
+POST Requests
+*************
+
++++++++++++++
+/register
++++++++++++++
+
++++++++++++++
+/user
++++++++++++++
+
++++++++++++++
+/admin-user
++++++++++++++
+
++++++++++++++
+/responses
++++++++++++++
+
++++++++++++++
+/schools
++++++++++++++
+
++++++++++++++
+/tli-reports
++++++++++++++
+
+`This endpoint <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/server/app.js#L261>`_
+gets the top level insights for the number of reports for a given
+category during a given time period. The input is of the following form.
+
+::
+
+    {
+        id: 1,
+        type: 'suspension',
+        length: 12,
+        duration: 'months'
+    }
+
+The response returns the total number of reports in the time period, as well as
+the a list that contains the number of reports in each duration.
 
 #############
 Other Files
