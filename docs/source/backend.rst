@@ -38,14 +38,20 @@ the admin panel. Here, the boxes that are displayed for each of the tables are
 compiled.
 
 The ``admin.js`` file contains the heart of the admin panel. The admin panel
-runs on an Express app at a desired port. At the `top <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L18>`_, we import the objects for
-all the tables our database, which are explained more deeply below. Then, we
-initialize the admin panel. Currently, we have three groups of links, the
-``reportsNavigation``, ``schoolsNavigation``, and ``userNavigation``. The
-translations can be used to change the names for the columns of the table when
+runs on an Express app at a desired port. At the
+`top <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L18>`_,
+we import the objects for all the tables our database, which are explained more
+deeply below. Then, we initialize the admin panel. Currently, we have three
+groups of `links <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L30>`_,
+the ``reportsNavigation``, ``schoolsNavigation``, and ``userNavigation``. The
+`translations <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L53>`_
+can be used to change the names for the columns of the table when
 they are displayed on the admin panel. This will not affect the names as they
 are stored in the database. Each of the tables is a "resource", and we order the
-columns within the resource's properties. Finally, 
+columns within the resource's `properties <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L120>`_.
+Finally, we define the `login <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/3f149a40e7e035276b9f4c190426d3491e8bea39/backend/admin/admin.js#L409>`_
+method for logging in to the admin panel. The method calls the backend to see if
+the username and password is valid.
 
 #############
 API Server
