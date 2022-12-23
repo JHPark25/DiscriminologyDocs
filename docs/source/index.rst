@@ -1,4 +1,4 @@
-Welcome to Discriminology documentation!
+Discriminology
 ===================================
 
 Discriminology is a nonprofit that works to leverage technology, data, and human
@@ -8,7 +8,7 @@ equitable opportunities to learn. Recognized by the Roddenberry Foundation,
 Echoing Green, and 4.0 schools, Discriminology has developed a platform that
 highlights racial inequity at schools around the United States. Since the
 platform's launch in 2016, Discriminology has amassed over 150,000 users and has
-evaluated over 90,000 schools \(nearly every K-12 public school in the country\)
+evaluated over 90,000 schools (nearly every K-12 public school in the country)
 through analyzing the US Department of Education Office for Civil Rights' data.
 
 In the current school system, there exist racial disparities in the experiences
