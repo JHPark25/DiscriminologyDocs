@@ -28,6 +28,8 @@ by T4SG. This app aims to create a mapping tool that publicly records and
 amplifies the lived experiences of Black and Brown communities by school and/or
 district.
 
+This page contains all the documentation for all the files in the codebase.
+
 Dcoumentation
 ***********************
 
