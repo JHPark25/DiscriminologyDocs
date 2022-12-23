@@ -66,8 +66,16 @@ The backend uses the Express framework. The file is separated into get and post
 requests. A status code of 200 is returned for requests that are a success, and
 400 is returned for failed requests.
 
+*************
+GET Request
+*************
+
 +++++++++++++
-Section 1 Title
+/questions
++++++++++++++
+
++++++++++++++
+/names
 +++++++++++++
 
 #############
