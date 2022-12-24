@@ -5,7 +5,6 @@ Backend
 
    Installation
    Admin Panel
-   Database Structure
    API Server
    Other Files
 
@@ -54,10 +53,6 @@ columns within the resource's `properties <https://github.com/hcs-t4sg/hcs-t4sg-
 Finally, we define the `login <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/backend/admin/admin.js#L409>`_
 method for logging in to the admin panel. The method calls the backend to see if
 the username and password is valid.
-
-#############
-Database Structure
-#############
 
 #############
 API Server
