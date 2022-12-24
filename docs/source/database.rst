@@ -33,7 +33,7 @@ The ``questions`` table contains the following.
 * ``question`` for the text of the question.
 * ``question_type`` for the type of the question ("radio", "checkbox", "text-field").
 * ``category`` for the category of the question ("policing", "suspension").
-* ``options`` for the options only for multiple choice questions. Options are separated by a " && " delimiter.
+* ``options`` for the options only for multiple choice questions. Options are separated by a `` && " delimiter.
 * ``textfield_label`` for the label of the textfield for free response questions.
 
 *************
@@ -45,7 +45,7 @@ contain the following columns.
 
 * ``school_id``, which is a foreign key to the school ID column. This stores the school that the report is for.
 * ``user_id``, which is a foreign key to the user ID column. This stores the user that made the report.
-* ``tags`` for storing all the tags clicked. Tags are separated by a " && " delimiter.
+* ``tags`` for storing all the tags clicked. Tags are separated by a `` && " delimiter.
 * ``date`` for the date of the incident. This is the field used for top level insights, not the ``createdAt`` column.
 * ``question?`` for the response to each question
 
