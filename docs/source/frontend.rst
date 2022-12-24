@@ -14,15 +14,13 @@ Installation
 To run project, make sure npm is installed. Then, install all node modules by
 running the following.
 
-``` 
-npm install
-```
+::
+    npm install
 
 Then, to run the frotend, you can run
 
-``` 
-npm run start
-```
+::
+    npm run start
 
 which will redirect you to the homepage. To view it in a mobile view, feel free
 to use any mobile-viewing extension, like MobileView in VS Code.
