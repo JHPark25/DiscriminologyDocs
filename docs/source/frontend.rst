@@ -236,7 +236,7 @@ files the report in November 2022, the incident will be plotted as occurring in
 February.
 
 If Discriminology adds a new category of report, it is very simple to update the
-``ReportsByCategoryChart``. In the ``ReportsByCategoryChart``.js file, simply
+``ReportsByCategoryChart``. In the ``reportsbycategorychart.js`` file, simply
 add a new ``backgroundColor`` `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsbycategorychart.js#L25>`_
 to the ``dataConfig`` constant. This color will be the color of the category on
 the doughnut chart.
@@ -252,8 +252,9 @@ For example, the following is a sample ``ReportsByCategoryChart`` component.
 ::
 
     <ReportsByCategoryChart
-        data={[{category: "Suspensions", reports: 44},
-               {category: "Policing/Security", reports: 53}
+        data={[
+                {category: "Suspensions", reports: 44},
+                {category: "Policing/Security", reports: 53}
              ]}
     />
 
@@ -332,37 +333,109 @@ associate a report with a user ID.
 ChooseReport
 *************
 
+The `ChooseReport page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/choosereport.js#L8>`_
+lays out the options for the category of report that the user is to fill out. A
+new category can be added by adding a new button, similar to the two existing
+ones.
+
 *************
 ForgotPassword
 *************
+
+The `ForgotPassword page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/forgotpassword.js#L11>`_
+allows users to reset their password through AWS Cognito. Users first enter
+their email. Then, an email is sent, if and only if the user is an existing user
+in the database. After that, a new window will populate with fields for a confirmation
+code and a new password. If the code is wrong or the email is not valid, an error
+will be displayed. The page also checks that the confirmation password matches
+the given password.
 
 *************
 Homepage
 *************
 
+The `Homepage page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/homepage.js#L12>`_
+is the landing page after the user logs in. It gives the user the option to
+add a new report, view top level insights, or add a new school. The user can select
+a school and press "Search" to view top level insights for that school.
+
+The top level insights URL takes the school ID as one of its parameters. Thus,
+the hompeage redirects the user to the top level insights page with the given
+school ID, when a school is entered.
+
+The user can also logout. This will clear all data stored in ``localStorage``
+and redirect the user back to the welcome page.
+
 *************
 Login
 *************
+
+The `Login page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/login.js#L11>`_
+allows a user to log in through AWS cognito. If the username, email, and password
+is not in the AWS Cognito User Pool, an error will be returned. The user is
+redirected to the homepage upon login.
 
 *************
 Policing
 *************
 
+The `Policing page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/policing.js#L6>`_
+allows a user to submit a report under the "Policing/Security" category. The
+page calls on the ``Report`` component outlined above.
+
 *************
 Registration
 *************
+
+The `Registration page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/registration.js#L13>`_
+allows users to create a new account. The only required fields are the username,
+email, and password. All other fields are optional. If no organization is entered,
+the organization ID will default to 1, which is the ID for the default organization.
+
+When a user submits their registration request, a request is made simultaneously
+to the AWS Cognito User Pool to add the new user and to the AWS RDS database.
+The password is only stored in AWS Cognito. AWS Cognito requires that the
+password be at least 8 characters in length and contain a number, an uppercase,
+and a lowercase letter. If these requirements are not met, an error will be
+displayed. Upon successful registration, the user is redirected to the homepage.
 
 *************
 Suspension
 *************
 
+The `Suspension page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/suspension.js#L6>`_
+allows a user to submit a report under the "Policing/Security" category. The
+page calls on the ``Report`` component outlined above.
+
 *************
 TopLevelInsights
 *************
 
+The `TopLevelInsights page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L18>`_
+displays two graphs for each school, given a school ID. The school ID is a
+parameter passed through the URL. For example, the endpoint ``/insights/1`` will
+return top level insights for the school with ID of 1, which is the default school.
+
+The first graph represents the distribution of reports among the different categories
+for a given school through a pie chart. The second graph shows the number of reports
+made for each category over a given timeframe through a line chart. The user
+can chosen whether the timeframe is the last month or the last year.
+
+To add a new category for top level insights, the constant defined `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L34>`_
+should be updated. Furthermore, the ``reportsByCategoryData`` function should be
+updated `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L147>`_,
+by adding the new category, similar to the two existing ones. The ``reportsOverTimeData``
+function will also need to be updated `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L173>`_,
+by again adding the new category, similar to the two existing ones. 
+
 *************
 Welcome
 *************
+
+The `Welcome page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/welcome.js#L5>`_
+allows users to register, login, or continue as a guest. If the user chooses to
+continue as a guest, the user's account will default to the default_user in the
+``users`` table, with ID of 1. Then, the user can navigate to all pages per usual.
 
 #############
 Other Files
