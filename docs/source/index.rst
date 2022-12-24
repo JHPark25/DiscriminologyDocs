@@ -1,12 +1,5 @@
 Discriminology
 =============
-.. toctree::
-   :maxdepth: 2
-
-   backend
-   frontend
-   scripts
-   updates
 
 Discriminology is a nonprofit that works to leverage technology, data, and human
 capital to advance the social, civic, and economic strength of Black and Brown
@@ -39,3 +32,11 @@ This page contains all the documentation for all the files in the codebase.
 
 Dcoumentation
 ***********************
+
+.. toctree::
+   :maxdepth: 1
+
+   backend
+   frontend
+   scripts
+   updates
