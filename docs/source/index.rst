@@ -37,6 +37,7 @@ Dcoumentation
    :maxdepth: 1
 
    backend
+   database
    frontend
    scripts
    updates
