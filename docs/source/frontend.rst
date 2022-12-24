@@ -283,6 +283,23 @@ rgb values as the border color, except it's a value is 0.5. For example, if the
 borderColor is ``rgba(6, 22, 140)``, the backgroundColor is recommended to be
 ``rgba(6, 22, 140, 0.5)``.
 
+The ``ReportsOverTimeChart`` generates a doughnut chart by accepting a prop for
+every category of report and a ``timeframe`` prop. The props for the Suspensions
+and Policing/Security categories are currently called ``suspensions`` and
+``policingSecurity``, respectively. Props for each category of the report should
+accept an array of numbers, each number representing a datapoint (the number of
+reports for the given category in a specified timeframe).  If the “timeframe”
+prop equals ``month``, there should be 30 numbers in the array (one for each of
+the past 30 days). If the ``timeframe`` prop equals ``month``, there should be
+12 numbers in the array (one for each of the past 12 months). The numbers should
+be in chronological order within the array, with the earliest datapoints coming
+first. The ``suspensions`` and ``policingSecurity`` props are currently examples
+of this kind of prop. The ``timeframe`` prop specifies whether the graph
+represents data from the past month (past 30 days) or past year. This should be
+a string that is either "year" or "month".
+
+The following is an example of how the ``ReportsOverTimeChart`` component
+can be called.
 ::
 
     <ReportsOverTimechart
