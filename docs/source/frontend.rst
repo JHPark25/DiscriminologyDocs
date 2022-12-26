@@ -43,7 +43,7 @@ These will be located in the ``src/components`` folder.
 CreateReport
 *************
 
-The `CreateReport component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/createreport.js#L6>`_
+The `CreateReport component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/createreport.js#L6>`_
 renders multiple questions at once so you do not need to call the ``Question``
 component repeatedly to create a report page.
 
@@ -60,7 +60,7 @@ for more information on these.
 Date
 *************
 
-The `Date component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/date.js#L6>`_
+The `Date component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/date.js#L6>`_
 renders a date question. The user can specify a date using a textbox or
 selecting a date on a calendar pop-up.
 
@@ -73,9 +73,11 @@ collects the user's response.
 Dropdown
 *************
 
-The `Dropdown component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/dropdown.js#L6>`_
+The `Dropdown component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/dropdown.js#L6>`_
 creates all the dropdown menus in the app. Given the name of a table, this
-component loads all the entries in that table.
+component loads all the entries in that table. For schools, this component will
+display the city and state in addition to the school name. The options are
+filtered to 10, but the options will continue to update as the user types.
 
 The ``Dropdown`` component takes the following props: ``table``, ``name``,
 ``width``, and ``handleChange``. ``table`` is the name of the table to be
@@ -98,7 +100,7 @@ Here is an example of the ``Dropdown`` component being called.
 Error
 *************
 
-The `Error component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/error.js#L3>`_
+The `Error component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/error.js#L3>`_
 is used to display the error messages for invalid inputs. For example, it is
 used in the registration page when the confirmation password does not match.
 The only prop to the ``Error`` component is the ``message`` that you want to be
@@ -108,7 +110,7 @@ displayed as a string.
 Footer
 *************
 
-The `Footer componet <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/footer.js#L6>`_
+The `Footer componet <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/footer.js#L6>`_
 displays the footer on the bottom of each of the internal pages. It currently
 contains two buttons: one that takes the user to the homepage and another that
 takes the user to a new report page.
@@ -126,7 +128,7 @@ in the header.
 NewSchool
 *************
 
-The `NewSchool component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/newschool.js#L22>`_
+The `NewSchool component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/newschool.js#L12>`_
 is a modal that allows users to add a new school. Once the button is clicked, a
 modal will pop-up and allow users to enter the information for a new school.
 Then, upon submitting, a nested modal will appear to confirm the submission.
@@ -137,7 +139,7 @@ the fields (name, city, and state) are blank.
 Question
 *************
 
-The `Question component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/question.js#L7>`_
+The `Question component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/question.js#L7>`_
 renders a report question. The component can handle MCQ questions
 (multiple-select and single-select questions) and textfield questions.
 
@@ -182,44 +184,10 @@ Below, is an example of the component being used.
     />
 
 *************
-Report
-*************
-The `Report component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/report.js#L16>`_
-generates a form where the users can submit their experiences to Discriminology.
-The report component is called in the ``policing.js`` and ``suspension.js``
-pages to generate the forms.
-
-The ``Report`` component takes a single ``category`` prop, which is the name of
-the category as it is stored in the database. Using this category, the component
-loads in all the questions for that category. Then, it calls on the
-``CreateReport`` component to display the questions. Finally, it loads in the
-tags that will be displayed at the bottom of the page.
-
-A new report page can be created as follows.
-
-1. In a new JavaScript file, copy and paste the code from ``policing.js``.
-
-2. Rename the function
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/policing.js#L6>`_
-appropriately, and
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/policing.js#L22>`_
-as well.
-
-3. In the ``Report`` component that is called `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/policing.js#L17>`_,
-change the string passed into the ``category`` prop to be the name of the
-new category.
-
-4. Add a route to the new page on ``frontend/src/App.js`` for the new page. To
-do this import the page
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/App.js#L3>`_,
-and add a new Route component
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/App.js#L25>`_.
-
-*************
 ReportHeader
 *************
 
-The `ReportHeader component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportheader.js#L4>`_
+The `ReportHeader component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/reportheader.js#L4>`_
 generates a header used specifically at the top of all report pages. This
 component combines the normal header component with the identical styling and
 an instructions message that is used at the top of every report page. The
@@ -229,7 +197,7 @@ an instructions message that is used at the top of every report page. The
 ReportsByCategoryChart
 *************
 
-The `ReportsByCategoryChart component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsbycategorychart.js#L8>`_
+The `ReportsByCategoryChart component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/reportsbycategorychart.js#L8>`_
 creates a doughnut chart that displays the number of reports per category.
 This chart is displayed on the top level insight page.
 
@@ -239,13 +207,6 @@ user states that the incident occurred, not when the report itself was filed.
 For example, if the user said that the incident happened in February 2022, but
 files the report in November 2022, the incident will be plotted as occurring in
 February.
-
-If Discriminology adds a new category of report, it is very simple to update the
-``ReportsByCategoryChart``. In the ``reportsbycategorychart.js`` file, simply
-add a new ``backgroundColor``
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsbycategorychart.js#L25>`_
-to the ``dataConfig`` constant. This color will be the color of the category on
-the doughnut chart.
 
 The ``ReportsByCategoryChart`` generates a doughnut chart by accepting a
 ``data`` prop. ``data`` should be an array of objects, with each object in the
@@ -269,61 +230,49 @@ component.
 ReportsOverTimeChart
 *************
 
-The `ReportsOverTimeChart component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsovertimechart.js#L25>`_
+The `ReportsOverTimeChart component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/reportsovertimechart.js#L25>`_
 creates a line graph that displays the number of reports for each category of
 reports over time. This chart is displayed on the top level insights page.
 
-If Discriminology adds a new category of report, the following steps should be
-taken to update the ``reportsovertimechart.js`` file.
-
-1.  In the ``ReportsOverTimeChart`` component, add a new prop
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsovertimechart.js#L25>`_,
-named after the new category that the chart can accept. This new prop will be
-used to pass data from the new category into the chart.
-
-2. In the ``datasets`` section, located
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/reportsovertimechart.js#L49>`_,
-add a new object that follows the same pattern as the already existing
-Suspensions and Policing/Security objects. The object fields has the following
-properties. ``label`` controls what the new category is called on the chart.
-``data`` references the new prop you defined in step 1. ``borderColor`` is the
-color of the line on the line chart. ``backgroundColor`` is the secondary color
-for the category on the chart. It is recommended that this color has the same
-rgb values as the border color, except it's a value is 0.5. For example, if the
-borderColor is ``rgba(6, 22, 140)``, the backgroundColor is recommended to be
-``rgba(6, 22, 140, 0.5)``.
+The line chart will automatically update with new categories added via the
+admin panel in the ``categories`` table. As mentioned in the database section,
+``borderColor`` is the color of the line on the line chart. ``backgroundColor``
+is the secondary color for the category on the chart. It is recommended that
+this color has the same rgb values as the border color, except it's a value is
+0.5. For example, if the ``borderColor`` is ``rgba(6, 22, 140)``, the
+``backgroundColor`` is recommended to be ``rgba(6, 22, 140, 0.5)``.
 
 The ``ReportsOverTimeChart`` generates a line chart by accepting a prop for
-every category of report and a ``timeframe`` prop. The props for the Suspensions
-and Policing/Security categories are currently called ``suspensions`` and
-``policingSecurity``, respectively. Props for each category of the report should
-be an array of numbers, each number representing a datapoint (the number of
-reports for the given category in a specified timeframe).  If the “timeframe”
-prop equals ``month``, there should be 30 numbers in the array (one for each of
-the past 30 days). If the ``timeframe`` prop equals ``month``, there should be
-12 numbers in the array (one for each of the past 12 months). The numbers should
-be in chronological order within the array, with the earliest datapoints coming
-first. The ``suspensions`` and ``policingSecurity`` props are currently examples
-of this kind of prop. The ``timeframe`` prop specifies whether the graph
-represents data from the past month (past 30 days) or past year. This should be
-a string that is either "year" or "month".
+every category of report via the ``data`` prop and a ``timeframe`` prop. The
+``data`` prop is a list of dictionaries for each category, where each dictionary
+follows the following structure.
 
-The following is an example of how the ``ReportsOverTimeChart`` component
-can be called.
 ::
 
-    <ReportsOverTimechart
-        suspensions={[0, 0, 3, 1, 0, 2, 5, 0, 0, 0, 0, 1]}
-        policingSecurity={[1, 0, 0, 0, 6, 3, 1, 0, 1, 0, 0, 0]}
-        timeframe="month"
-    />
+    {
+        label: 'Suspensions',
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        borderColor: 'rgba(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+    }
+
+
+Here ``data`` is the array of numbers, where each number represents a datapoint
+(the number of reports for the given category in a specified timeframe).  If the
+"timeframe" prop equals ``month``, there should be 30 numbers in the array (one
+for each of the past 30 days). If the ``timeframe`` prop equals ``month``, there
+should be 12 numbers in the array (one for each of the past 12 months). The
+numbers should be in chronological order within the array, with the earliest
+datapoints coming first. The ``timeframe`` prop specifies whether the graph
+represents data from the past month (past 30 days) or past year. This should be
+a string that is either "year" or "month".
 
 *************
 Tag
 *************
 
 The
-`Tag component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/components/tag.js#L5>`_
+`Tag component <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/components/tag.js#L5>`_
 creates one of the tags that is displayed at the bottom of the reports page. The
 ``Tag`` component takes in a ``label`` and a ``handleTagChange`` prop. The
 ``label`` is the name of the tag, passed in as a string. The ``handleTagChange``
@@ -343,16 +292,16 @@ associate a report with a user ID, upon submission.
 ChooseReport
 *************
 
-The `ChooseReport page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/choosereport.js#L8>`_
-lays out the options for categories of report that the user can fill out. A
-new category can be added by adding a new button, similar to the two existing
-ones `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/choosereport.js#L55>`_.
+The `ChooseReport page <hhttps://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/choosereport.js#L9>`_
+lays out the options for categories of report that the user can fill out. The
+page queries for all categories and prints a button for each category. Thus, no
+changes need to be made to this page when a new category is added.
 
 *************
 ForgotPassword
 *************
 
-The `ForgotPassword page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/forgotpassword.js#L11>`_
+The `ForgotPassword page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/forgotpassword.js#L11>`_
 allows users to reset their password through AWS Cognito. Users first enter
 their email. Then, an email is sent to the address, if the user is an existing
 user in the database. After that, a new window will appear with fields for a
@@ -364,7 +313,7 @@ checks that the confirmation password matches the given password.
 Homepage
 *************
 
-The `Homepage page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/homepage.js#L12>`_
+The `Homepage page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/homepage.js#L12>`_
 is the landing page after the user logs in. It gives the user the option to
 add a new report, view top level insights, or add a new school. The user can
 also logout. This will clear all data stored in ``localStorage`` and redirect
@@ -379,24 +328,16 @@ level insights page with the given school ID, when the form is submitted.
 Login
 *************
 
-The `Login page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/login.js#L11>`_
+The `Login page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/login.js#L11>`_
 allows a user to log in through AWS cognito. If the username, email, and password
 is not in the AWS Cognito User Pool, an error will be returned and displayed on
 the page. The user is redirected to the homepage upon successful login.
 
 *************
-Policing
-*************
-
-The `Policing page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/policing.js#L6>`_
-allows a user to submit a report under the "Policing/Security" category. The
-page calls on the ``Report`` component outlined `above <https://discriminologydocs.readthedocs.io/en/latest/frontend.html#report>`_.
-
-*************
 Registration
 *************
 
-The `Registration page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/registration.js#L13>`_
+The `Registration page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/registration.js#L13>`_
 allows users to create a new account. The only required fields are the username,
 email, and password. All other fields are optional. If no organization is
 entered, the organization ID will default to 1, which is the ID for the default
@@ -412,18 +353,20 @@ to the homepage. ``localStorage`` wil also be used to store the user's new
 username.
 
 *************
-Suspension
+Report
 *************
-
-The `Suspension page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/suspension.js#L6>`_
-allows a user to submit a report under the "Policing/Security" category. The
-page calls on the ``Report`` component outlined `above <https://discriminologydocs.readthedocs.io/en/latest/frontend.html#report>`_.
+The `Report page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/report.js#L17>`_
+generates a form where the users can submit their experiences to Discriminology.
+The ``Report`` page takes the category ID as one of its parameters. Using this
+category, the page loads in all the questions for that category. Then, it calls
+on the ``CreateReport`` component to display the questions. Finally, it loads in
+the tags that will be displayed at the bottom of the page.
 
 *************
 TopLevelInsights
 *************
 
-The `TopLevelInsights page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L18>`_
+The `TopLevelInsights page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/toplevelinsights.js#L18>`_
 displays two graphs for each school, given a school ID. The school ID is a
 parameter passed through the URL. For example, the endpoint ``/insights/1`` will
 return top level insights for the school with ID of 1, which is the default
@@ -435,20 +378,11 @@ number of reports made for each category over a given timeframe through a line
 chart. The user can choose whether the timeframe is the last month or the last
 year.
 
-To add a new category for top level insights, the constant defined
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L34>`_
-should be updated. Furthermore, the ``ReportsByCategoryData`` function should be
-updated `here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L147>`_,
-by adding the new category, similar to the two existing ones. The ``ReportsOverTimeData``
-function will also need to be updated
-`here <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/toplevelinsights.js#L173>`_,
-by again adding the new category, similar to the two existing ones. 
-
 *************
 Welcome
 *************
 
-The `Welcome page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/cb9c16a1dd16ed75bd18a8b0172156ea3e80c9c0/frontend/src/pages/welcome.js#L5>`_
+The `Welcome page <https://github.com/hcs-t4sg/hcs-t4sg-discriminology_project/blob/9eb3b105c94f68e8ddf96f987fff8aa0501d2083/frontend/src/pages/welcome.js#L5>`_
 allows users to register, login, or continue as a guest. If the user chooses to
 continue as a guest, the user's account will default to the default_user in the
 ``users`` table, with ID of 1. Then, the user can navigate to all pages per

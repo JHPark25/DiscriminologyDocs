@@ -24,25 +24,8 @@ database and update accordingly.
 Add Categories
 #############
 
-To add a new category, follow these steps.
-
-1. Create a new reports page for the new category, by following the link
-`here <https://discriminologydocs.readthedocs.io/en/latest/frontend.html#report>`_.
-
-2. Add a new category to the ``ReportsByCategoryChart`` component, following the
-instructions `here <https://discriminologydocs.readthedocs.io/en/latest/frontend.html#reportsbycategorychart>`_.
-This will add the doughnut chart seen on the top level insights page.
-
-3. Add a new category to the ``ReportsOverTimeChart`` component, following the
-instructions `here <https://discriminologydocs.readthedocs.io/en/latest/frontend.html#reportsovertimechart>`_.
-This will add the line chart seen on the top level insights page.
-
-4. Add a new button to the ``ChooseReport`` page in
-``frontend/src/pages/choosereport.js`` that allows users to select the new
-category for a new report being filed.
-
-5. In the admin panel, add to the "questions" table with the new set of
-questions and new category.
-
-6. In the ``backend/server/app.js`` file, update the ``CATEGORIES`` global
-variable, as explained `here <https://discriminologydocs.readthedocs.io/en/latest/backend.html#tli-tags>`_.
+To add a new category, simply add the category in the admin panel to the
+``categories`` table, using `this <https://discriminologydocs.readthedocs.io/en/latest/database.html#categories>`_
+for reference. The app should automatically react to the new category and
+display a new option when choosing reports. Furthermore, the top level insights
+page will automatically be updated.
